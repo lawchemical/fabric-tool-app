@@ -3,7 +3,7 @@ const { google } = require('googleapis');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080; // Use 8080 as your default, but Railway will override
 
 const SPREADSHEET_ID = process.env.SHEET_ID;
 const RANGE = 'Fabrics!A2:C';
@@ -39,19 +39,7 @@ app.get('/api/fabrics', async (req, res) => {
   }
 });
 
+// Listen on the correct port; place this at the very end
 app.listen(PORT, () => {
   console.log(`Fabric API running on port ${PORT}`);
-});
-
-const express = require('express');
-const { google } = require('googleapis');
-require('dotenv').config();
-
-const app = express();
-// ... your middleware, routes, and logic
-
-// Place these lines at the end of the file:
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
 });
