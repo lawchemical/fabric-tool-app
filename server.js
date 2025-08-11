@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT; // No fallback!
 
 app.get('/test', (req, res) => {
   res.send('Test route is working!');
@@ -13,4 +13,3 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Test server running on port ${PORT}`);
 });
-
