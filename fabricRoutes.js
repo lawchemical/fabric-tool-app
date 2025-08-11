@@ -13,9 +13,11 @@ const auth = new google.auth.GoogleAuth({
 
 const sheets = google.sheets({ version: 'v4', auth });
 
+// Replace with your actual Spreadsheet ID and Sheet Name
 const SPREADSHEET_ID = 'YOUR_SPREADSHEET_ID';
 const SHEET_NAME = 'Sheet1';
 
+// GET /api/fabrics - return all fabrics for dropdowns
 router.get('/fabrics', async (req, res) => {
   try {
     const result = await sheets.spreadsheets.values.get({
