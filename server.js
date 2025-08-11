@@ -13,7 +13,4 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Test server running on port ${PORT}`);
 });
-"scripts": {
-  "start": "node server.js",
-  "test": "echo \"Error: no test specified\" && exit 1"
-},
+
