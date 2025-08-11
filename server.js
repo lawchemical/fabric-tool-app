@@ -42,3 +42,16 @@ app.get('/api/fabrics', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Fabric API running on port ${PORT}`);
 });
+
+const express = require('express');
+const { google } = require('googleapis');
+require('dotenv').config();
+
+const app = express();
+// ... your middleware, routes, and logic
+
+// Place these lines at the end of the file:
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
