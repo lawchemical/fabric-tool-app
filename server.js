@@ -43,3 +43,6 @@ app.get('/api/fabrics', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Fabric API running on port ${PORT}`);
 });
+app.get('/test', (req, res) => {
+  res.send('Test route is working!');
+});
