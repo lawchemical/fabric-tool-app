@@ -15,7 +15,7 @@ const auth = new google.auth.GoogleAuth({
 const sheets = google.sheets({ version: 'v4', auth });
 
 // Replace with your actual Spreadsheet ID and Sheet Name
-const SPREADSHEET_ID = 'YOUR_SPREADSHEET_ID';
+const SPREADSHEET_ID = '1jZWC1bl6OmgxImBu1ioYoN2241yoDjvOteUI2bvo2cE';
 const SHEET_NAME = 'Sheet1';
 
 // GET /api/fabrics - return all fabrics for dropdowns
