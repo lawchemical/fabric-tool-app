@@ -1,17 +1,2 @@
-const express = require('express');
-const app = express();
-const PORT = process.env.PORT || 8080;
-
-app.get('/test', (req, res) => {
-  res.send('Test route is working!');
-});
-
-app.get('/', (req, res) => {
-  res.send('Root route is working!');
-});
-
-console.log("process.env.PORT value:", process.env.PORT);
-
-app.listen(PORT, () => {
-  console.log(`Test server running on port ${PORT}`);
-});
+const fabricRoutes = require('./fabricRoutes');
+app.use('/api', fabricRoutes);
