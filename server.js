@@ -10,6 +10,8 @@ app.get('/', (req, res) => {
   res.send('Root route is working!');
 });
 
+console.log("process.env.PORT value:", process.env.PORT);
+
 app.listen(PORT, () => {
   console.log(`Test server running on port ${PORT}`);
 });
