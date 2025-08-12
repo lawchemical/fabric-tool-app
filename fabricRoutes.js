@@ -20,9 +20,10 @@ const SHEET_NAME = 'Sheet1';
 // GET /api/fabrics - return all fabrics for dropdowns
 router.get('/fabrics', async (req, res) => {
   try {
+    // Extend range to include column E (image_url)
     const result = await sheets.spreadsheets.values.get({
       spreadsheetId: SPREADSHEET_ID,
-      range: `${SHEET_NAME}!A2:D`,
+      range: `${SHEET_NAME}!A2:E`,
     });
     const rows = result.data.values;
     if (!rows || rows.length === 0) return res.status(404).json({ error: 'No fabrics found.' });
@@ -31,7 +32,8 @@ router.get('/fabrics', async (req, res) => {
       name: row[0],
       sku: row[1],
       grade: row[2],
-      manufacturer: row[3]
+      manufacturer: row[3],
+      image_url: row[4] || "" // <-- add image_url from column E
     }));
 
     res.json({ fabrics });
